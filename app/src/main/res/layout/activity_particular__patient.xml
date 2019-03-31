@@ -66,7 +66,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ListView
-        android:id="@+id/listOfvisits "
+        android:id="@+id/listOfvisits"
         android:layout_width="395dp"
         android:layout_height="361dp"
         android:layout_marginStart="8dp"

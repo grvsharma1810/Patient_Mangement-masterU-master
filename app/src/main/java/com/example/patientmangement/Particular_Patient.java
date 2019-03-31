@@ -10,13 +10,15 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class Particular_Patient extends AppCompatActivity {
 
 
     Button dbutton;
     com.example.patientmangement.mDatabaseHelper db;
     String s;
-
+    ArrayList<visit_details>  list= new ArrayList<>();
 
 
     @Override
@@ -45,6 +47,5 @@ public class Particular_Patient extends AppCompatActivity {
         Intent iiii=new Intent(getApplicationContext(),addVisit.class);
         iiii.putExtra("name", s);
         startActivity(iiii);
-
     }
 }

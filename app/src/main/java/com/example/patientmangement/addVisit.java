@@ -40,14 +40,14 @@ public class addVisit extends AppCompatActivity {
         }
         ContentValues values = new ContentValues();
         values.put("DOCNAME",name);
-         values.put("DATEE",date);
+        values.put("DATEE",date);
         values.put("SYMPTOMS",sympo);
         values.put("MEDICINES",medicines);
         SQLiteDatabase db = helper.getWritableDatabase();
         int r=db.update("PATIENT_DETAILS", values, "NAME = ?", new String[]{namep});;
         if(r>0)
         {
-            Toast.makeText(getApplicationContext(), namep + "  Updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), namep + " Updated", Toast.LENGTH_SHORT).show();
         }
         else
         {
