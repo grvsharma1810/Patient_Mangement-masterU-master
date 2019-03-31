@@ -14,16 +14,17 @@ import static android.os.Build.VERSION_CODES.M;
 
 public class mDatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DBNAME = "PatientDatabase";
+    public static final String DBNAMEE = "PatientDatabase2";
+
     public static final int version = 1;
 
     mDatabaseHelper(Context context){
-        super(context,DBNAME,null,version);
+        super(context,DBNAMEE,null,version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE PATIENT_DETAILS (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AGE INT, GENDER INT, PHONE TEXT, DOCNAME TEXT, SYMPTOMS TEXT, MEDICINES TEXT)";
+        String sql = "CREATE TABLE PATIENT_DETAILS (id INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, AGE INT, GENDER INT, PHONE TEXT, DOCNAME TEXT,DATEE TEXT, SYMPTOMS TEXT, MEDICINES TEXT)";
         db.execSQL(sql);
 
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,14 +40,14 @@ public class addVisit extends AppCompatActivity {
         }
         ContentValues values = new ContentValues();
         values.put("DOCNAME",name);
-        // values.put("DAAT",date);
+         values.put("DATEE",date);
         values.put("SYMPTOMS",sympo);
         values.put("MEDICINES",medicines);
         SQLiteDatabase db = helper.getWritableDatabase();
         int r=db.update("PATIENT_DETAILS", values, "NAME = ?", new String[]{namep});;
         if(r>0)
         {
-            Toast.makeText(getApplicationContext(), namep + "Updated", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), namep + "  Updated", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -70,8 +71,9 @@ public class addVisit extends AppCompatActivity {
         symp=(EditText)findViewById(R.id.editText3);
         medi=(EditText)findViewById(R.id.editText4);
         helper = new com.example.patientmangement.mDatabaseHelper(this);
-        Intent intent = new Intent();
+        Intent intent = getIntent();
         namep = intent.getStringExtra("name");
+        Log.i("name",namep);
 
 
     }
